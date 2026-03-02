@@ -1,0 +1,23 @@
+package slidingwindow;
+
+public class VariableSize {
+	public static void main(String args[]) {
+	int arr[]= {0,1,3,1,1,6,7,1,0,1};
+	int k=2;
+	int ans=0;
+	int c=0;
+	int l=0;
+	for(int r=0;r<arr.length;r++) {
+		if(arr[r]==1)
+			c++;
+		while(c>2) {
+			if(arr[l]==1) {
+				c--;
+			}
+			l++;
+		}
+		ans=Math.max(ans,r-l+1);
+	}
+	System.out.println(ans);
+}
+}
